@@ -8,13 +8,13 @@
 import Foundation
 @testable import UsersListApp_main
 
-class MockUserService:UsersServicesProtocol{
+class MockUserService: UsersServicesProtocol {
    
-    var mockUser:[Users] = []
+    var mockUser: [Users] = []
     var showFail = false
     
     func loadUsers() async throws -> [Users] {
-        if showFail{
+        if showFail {
             throw URLError(.notConnectedToInternet)
         }
         return mockUser

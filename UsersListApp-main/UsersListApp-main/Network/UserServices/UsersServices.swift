@@ -8,12 +8,14 @@
 import Foundation
 
 
-class UsersServices:UsersServicesProtocol{
+class UsersServices: UsersServicesProtocol {
+    
     private var networkService : NetworkServiceProtocol
     
     init(networkServices: NetworkServiceProtocol = NetworkServices()) {
         self.networkService = networkServices
     }
+    
     func loadUsers() async throws -> [Users] {
         return try await networkService.fetchUsers(url: APIEndpoints.getUsers, type: [Users].self)
     }

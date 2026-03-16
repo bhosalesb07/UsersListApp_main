@@ -7,9 +7,9 @@
 
 import Foundation
 @MainActor
-class UserListViewModel:ObservableObject,UsersListViewModelProtocol{
+class UserListViewModel: ObservableObject, UsersListViewModelProtocol {
     
-    @Published private(set) var loadingState:DataLoadingStates<[Users]> = .idle
+    @Published private(set) var loadingState: DataLoadingStates<[Users]> = .idle
     
     
     var userService: UsersServicesProtocol
@@ -22,7 +22,7 @@ class UserListViewModel:ObservableObject,UsersListViewModelProtocol{
         loadingState = .loading
         
         do {
-            loadingState =  .loaded(try await userService.loadUsers())
+            loadingState = .loaded(try await userService.loadUsers())
         } catch{
             loadingState = .failure(error)
         }

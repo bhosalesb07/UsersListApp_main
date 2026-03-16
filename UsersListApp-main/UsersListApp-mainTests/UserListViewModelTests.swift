@@ -11,7 +11,7 @@ import XCTest
 @MainActor
 final class UserListViewModelTests: XCTestCase {
 
-    var sut : UserListViewModel!
+    var sut: UserListViewModel!
     var mockService: MockUserService!
     
     override func setUp() {

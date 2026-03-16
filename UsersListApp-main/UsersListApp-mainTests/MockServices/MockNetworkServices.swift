@@ -8,8 +8,7 @@
 import Foundation
 @testable import UsersListApp_main
 
-class MockNetworkServices:NetworkServiceProtocol{
-    
+class MockNetworkServices: NetworkServiceProtocol {
     
     var error: NetworkError?
     var mockdata: Decodable?
